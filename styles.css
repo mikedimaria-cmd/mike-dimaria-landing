@@ -57,6 +57,7 @@ body {
     background-color: #000000;
     padding: 50px 70px;
     border: 2px solid #fd4e4e;
+    border-radius: 8px;
     position: relative;
     width: 100%;
     max-width: 700px;
