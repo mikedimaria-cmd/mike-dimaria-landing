@@ -1,0 +1,299 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 60px;
+    min-height: 80vh;
+}
+
+/* Coming Soon Section */
+.coming-soon {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.new-site {
+    color: #ffffff;
+}
+
+.coming-soon-text {
+    color: #0d9aa3;
+}
+
+/* Main Content Section */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Name Banner */
+.name-banner {
+    background-color: #000000;
+    padding: 50px 70px;
+    border: 2px solid #fd4e4e;
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+}
+
+.name {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #fd4e4e;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.title {
+    font-size: 1.8rem;
+    color: #0d9aa3;
+    font-weight: 400;
+}
+
+/* Profile Image */
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image {
+    width: 350px;
+    height: 350px;
+    border: 2px solid #fd4e4e;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+}
+
+/* Bottom Section */
+.bottom-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-label {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.email {
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.email:hover {
+    color: #0d9aa3;
+    transform: scale(1.05);
+}
+
+.email-prefix {
+    color: #fd4e4e;
+    transition: color 0.3s ease;
+}
+
+.email-domain {
+    color: #fd4e4e;
+    transition: color 0.3s ease;
+}
+
+.email:hover .email-prefix,
+.email:hover .email-domain {
+    color: #0d9aa3;
+}
+
+/* Role Banner */
+.role-banner {
+    background-color: #000000;
+    padding: 35px 40px;
+    border: 2px solid #fd4e4e;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    max-width: 700px;
+}
+
+.role-title {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.role-company {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Previous Experience */
+.previous-experience {
+    border-top: 1px solid #333333;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.previous-label {
+    color: #0d9aa3;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.previous-role {
+    margin-bottom: 12px;
+}
+
+.previous-role:last-child {
+    margin-bottom: 0;
+}
+
+.previous-company {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.previous-description {
+    color: #cccccc;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        gap: 30px;
+        min-height: auto;
+        max-width: 100%;
+    }
+    
+    .main-content {
+        gap: 30px;
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .name-banner {
+        padding: 30px 40px;
+        max-width: 100%;
+    }
+    
+    .name {
+        font-size: 2.5rem;
+    }
+    
+    .title {
+        font-size: 1.2rem;
+    }
+    
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .bottom-section {
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .role-banner {
+        max-width: 100%;
+        padding: 25px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    
+    .name {
+        font-size: 2rem;
+    }
+    
+    .title {
+        font-size: 1rem;
+    }
+    
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .email {
+        font-size: 1.1rem;
+    }
+    
+    .role-company {
+        font-size: 1.1rem;
+    }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.footer-text {
+    color: #666666;
+    font-size: 0.75rem;
+    font-weight: 400;
+    font-style: italic;
+}
