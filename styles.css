@@ -61,6 +61,7 @@ body {
     position: relative;
     width: 100%;
     max-width: 700px;
+    box-shadow: 8px 8px 0px #fd4e4e;
 }
 
 .name {
@@ -159,6 +160,7 @@ body {
     text-align: center;
     width: 100%;
     max-width: 700px;
+    box-shadow: 8px 8px 0px #fd4e4e;
 }
 
 .role-title {
@@ -230,6 +232,7 @@ body {
     .name-banner {
         padding: 30px 40px;
         max-width: 100%;
+        box-shadow: 6px 6px 0px #fd4e4e;
     }
     
     .name {
@@ -253,12 +256,21 @@ body {
     .role-banner {
         max-width: 100%;
         padding: 25px 30px;
+        box-shadow: 6px 6px 0px #fd4e4e;
     }
 }
 
 @media (max-width: 480px) {
     body {
         padding: 15px;
+    }
+    
+    .name-banner {
+        box-shadow: 4px 4px 0px #fd4e4e;
+    }
+    
+    .role-banner {
+        box-shadow: 4px 4px 0px #fd4e4e;
     }
     
     .name {
