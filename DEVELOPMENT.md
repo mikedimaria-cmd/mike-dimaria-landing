@@ -42,6 +42,8 @@ This document tracks the development process and AI models used in building this
    - Added progressive spacing reduction for 1920px+ and 2560px+ screens
    - Changed layout from grid to flexbox for better large screen control
    - Added max-height constraints to prevent content from stretching across entire screen height
+   - Fixed laptop screen display issues by removing restrictive height constraints on smaller screens
+   - Added specific laptop optimization for 1200px-1919px screens
 
 ## Technical Details
 
