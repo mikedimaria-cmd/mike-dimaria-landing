@@ -27,20 +27,41 @@ body {
     justify-content: center;
 }
 
-/* Coming Soon Section */
-.coming-soon {
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin-bottom: 20px;
-    text-align: center;
+/* Navigation Menu */
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 10;
 }
 
-.new-site {
-    color: #ffffff;
+.nav-link {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #e3e3e3;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.coming-soon-text {
+.nav-link:hover {
+    font-weight: 700;
     color: #0d9aa3;
+}
+
+.nav-link.active {
+    font-weight: 700;
+    color: #0d9aa3;
+}
+
+.nav-divider {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fd4e4e;
 }
 
 /* Main Content Section */
@@ -51,6 +72,8 @@ body {
     align-items: center;
     max-width: 1000px;
     margin: 0 auto;
+    min-height: 400px;
+    justify-content: center;
 }
 
 /* Name Banner */
@@ -138,16 +161,24 @@ body {
 }
 
 .email-prefix {
+    color: #e3e3e3;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.email-at {
     color: #fd4e4e;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .email-domain {
-    color: #fd4e4e;
+    color: #0d9aa3;
     transition: color 0.3s ease;
 }
 
 .email:hover .email-prefix,
+.email:hover .email-at,
 .email:hover .email-domain {
     color: #0d9aa3;
 }
@@ -272,6 +303,22 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .navigation {
+        margin-bottom: 40px;
+        gap: 15px;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+    }
+    
+    .nav-divider {
+        font-size: 1.1rem;
+    }
+    
+    .main-content {
+        min-height: 300px;
+    }
     .container {
         gap: 30px;
         min-height: auto;
