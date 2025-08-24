@@ -41,3 +41,4 @@ Open `index.html` in your web browser to preview the page locally.
 ## Deployment
 
 Upload these files to your web hosting service to replace the current Google Doc redirect.
+# Force cache refresh
