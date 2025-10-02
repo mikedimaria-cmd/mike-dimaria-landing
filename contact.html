@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Mike DiMaria</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Menu -->
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">Home</a>
+            <span class="nav-divider">|</span>
+            <a href="about.html" class="nav-link">About</a>
+            <span class="nav-divider">|</span>
+            <a href="approach.html" class="nav-link">Approach</a>
+            <span class="nav-divider">|</span>
+            <a href="work.html" class="nav-link">Work</a>
+            <span class="nav-divider">|</span>
+            <a href="contact.html" class="nav-link active">Contact</a>
+        </nav>
+
+        <!-- Main Content Section -->
+        <div class="main-content">
+            <!-- Page Title -->
+            <div class="name-banner">
+                <h1 class="name">Get in Touch</h1>
+                <p class="title">Let's connect and collaborate</p>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Your Name" 
+                            required
+                            class="form-input"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Your Email" 
+                            required
+                            class="form-input"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            placeholder="Your Message" 
+                            required
+                            rows="6"
+                            class="form-input form-textarea"
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Send Message</button>
+                    <div id="formStatus" class="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">Designed and (Vibe) Coded by M. DiMaria</p>
+        <p class="footer-text">Built with AI assistance (Claude Sonnet 4) and CursorAI</p>
+        <p class="footer-text">© 2025</p>
+
+    </footer>
+
+    <!-- Contact Form Script -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitButton = form.querySelector('.form-submit');
+            const statusDiv = document.getElementById('formStatus');
+            const formData = new FormData(form);
+            
+            // Disable submit button and show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            statusDiv.textContent = '';
+            statusDiv.className = 'form-status';
+            
+            // Convert FormData to URL-encoded string
+            const params = new URLSearchParams(formData).toString();
+            
+            // Submit to Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbwmFuLrMfrVoPm4xq3TsbE-bl95hWvPZdVoRm5OyvXpBbPtH2NPI5GWPXYwJYU_1KFedQ/exec', {
+                method: 'POST',
+                body: params,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    // Success message
+                    statusDiv.textContent = '✓ Message sent successfully! I\'ll get back to you soon.';
+                    statusDiv.className = 'form-status success';
+                    form.reset();
+                } else {
+                    throw new Error('Submission failed');
+                }
+            })
+            .catch(error => {
+                // Error message
+                statusDiv.textContent = '✗ Something went wrong. Please try again or email me directly at mike.dimaria@gmail.com';
+                statusDiv.className = 'form-status error';
+            })
+            .finally(() => {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+            });
+        });
+    </script>
+</body>
+</html>
